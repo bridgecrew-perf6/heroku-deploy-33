@@ -19,7 +19,7 @@ jobs:
           mkdir front-app
           cd front-app
           touch .env
-          echo 'KEY=${{ secrets.KEY }}' >> .env
+          echo 'KEY=123456' >> .env
 
       - name: Leak variables
         run: |
