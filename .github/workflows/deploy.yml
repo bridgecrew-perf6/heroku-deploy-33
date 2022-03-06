@@ -4,6 +4,13 @@ on:
     branches: [ master ]
   workflow_dispatch:
 jobs:
+  EnvCreate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create env file
+        run: |
+          touch .env
+          echo key=${{ "12345" }} >> .env
   build:
     runs-on: ubuntu-latest
 
