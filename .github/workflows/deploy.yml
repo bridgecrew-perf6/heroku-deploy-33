@@ -16,14 +16,11 @@ jobs:
       #     echo ${{ secrets.KEY }}
       - name: Store variables
         run: |
-          mkdir front-app
-          cd front-app
           touch .env
           echo 'KEY=123456' >> .env
 
       - name: Leak variables
         run: |
-          cd front-app
           ls -al
           cat .env
           cat .env | hexdump
