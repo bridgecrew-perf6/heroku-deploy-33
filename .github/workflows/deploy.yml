@@ -12,8 +12,8 @@ jobs:
       - name: create env file
         run: |
           touch .env
-          echo KEY=${{ secrets.KEY_FROM_ENVIRONMENT_SECRETS }} >> .env
-          echo ${{ secrets.KEY_FROM_ENVIRONMENT_SECRETS }}
+          echo KEY=${{ secrets.KEY }} >> .env
+          echo ${{ secrets.KEY }}
       - name: Use Node.js
         uses: actions/setup-node@v2
         with: 
