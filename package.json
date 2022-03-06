@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kamax0123/heroku-deploy#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.3"
   },
   "devDependencies": {
