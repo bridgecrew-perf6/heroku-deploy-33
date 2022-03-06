@@ -10,7 +10,7 @@ jobs:
       - name: create env file
         run: |
           touch .env
-          echo key=${{ "12345" }} >> .env
+          echo KEY=${{ "secrets.KEY" }} >> .env
   build:
     runs-on: ubuntu-latest
 
