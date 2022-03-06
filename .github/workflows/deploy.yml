@@ -12,7 +12,7 @@ jobs:
       - name: create env file
         run: |
           touch .env
-          echo KEY=${{ "secrets.KEY" }} >> .env
+          echo KEY=${{ secrets.KEY }} >> .env
       - name: Use Node.js
         uses: actions/setup-node@v2
         with: 
