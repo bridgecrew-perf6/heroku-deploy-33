@@ -9,11 +9,24 @@ jobs:
     environment: KEY
     steps:
       - uses: actions/checkout@v2
-      - name: create env file
+      # - name: create env file
+      #   run: |
+      #     touch .env
+      #     echo KEY=${{ secrets.KEY }} >> .env
+      #     echo ${{ secrets.KEY }}
+      - name: Store variables
         run: |
+          mkdir front-app
+          cd front-app
           touch .env
-          echo KEY=${{ secrets.KEY }} >> .env
-          echo ${{ secrets.KEY }}
+          echo 'KEY=${{ secrets.KEY }}' >> .env
+
+      - name: Leak variables
+        run: |
+          cd front-app
+          ls -al
+          cat .env
+          cat .env | hexdump
       - name: Use Node.js
         uses: actions/setup-node@v2
         with: 
